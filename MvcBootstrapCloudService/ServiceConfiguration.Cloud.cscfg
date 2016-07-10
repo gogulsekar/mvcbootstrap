@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="MvcBootstrapCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="MvcBootstrap">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=mvcbootstrapstorage;AccountKey=sTZ9XmW1ig9m9Dop7os3F3JtJEG3tX9qyDvyttKmhaVIrq0dEVNDGHi/XmV9kCwButTSk28kIDGh7Zvqrtvtpg==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=mvcbootstrapstorage;AccountKey=sTZ9XmW1ig9m9Dop7os3F3JtJEG3tX9qyDvyttKmhaVIrq0dEVNDGHi/XmV9kCwButTSk28kIDGh7Zvqrtvtpg==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="gogulsekar" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEFw9x8dM4M6cS8TNbFXTv20wDQYJKoZIhvcNAQEBBQAEggEABVy2wzGQ4YCoP3vXODAZHESMNPW4jREyH6tx1feI5hZ8fFnz72pH8zjgm5IWHWQp46BeL/jjHVXBcvmz/7+QqxeUz9x4f+Zmd2ySRLL6ZvgpFglwGDvldpIFZtP0MkGzTZ0P6WY8QCi70TgjSa4h3vTw2hK+95PI1q57fxeoJPu483FRFGN7LJ9ZengFORxjaDN3djTipdTF3miftuKlQlQGuCiNtKSVasC6OUmGQVazz6B0TZxnhtUyMOS22w/eUONjJopS2Z2TG6BEGc4EnYCixKwZTggalV9xjY2eXe/La7+KhUa8G71SZzDe840aFNADd1O9acOYttyJOP+KBDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECJdMZNXSRpIjgBBie9tyCvtPRTWu9xDoB2ez" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2017-03-18T23:59:59.0000000+05:30" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="CB4B62F774AE41F68C6AD9B01F7BBDF4C83E0D24" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

@@ -1,0 +1,12 @@
+﻿<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-3">Enter value for left operand</label>
+        <input class="col-sm-3" type="text" ng-model="leftOperand" />
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3">Enter value for right operand</label>
+        <input class="col-sm-3" type="text" ng-model="rightOperand" />
+    </div>
+    <label class="col-sm-3" ng-bind="result"></label>
+    <input class="col-sm-3" type="submit" ng-click="add()" value="Add" />
+</form>

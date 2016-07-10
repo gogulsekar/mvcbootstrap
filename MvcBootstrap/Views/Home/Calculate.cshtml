@@ -1,0 +1,89 @@
+﻿@model MvcBootstrap.Models.CalculatorDataModel
+
+<div id="calculator">
+    @*@using (Html.BeginForm())
+        {*@
+    <table class="table-hover">
+        <tr class="col-sm-9 col-md-9 col-lg-9">
+            <td class="col-sm-3 col-md-3 col-lg-3">
+                @Html.LabelFor(d => d.OperandLeft)
+            </td>
+            <td class="col-sm-3 col-md-3 col-lg-3">
+                @Html.TextBoxFor(d => d.OperandLeft)
+            </td>
+        </tr>
+        <tr class="col-sm-9 col-md-9 col-lg-9">
+            <td class="col-sm-3 col-md-3 col-lg-3">
+                @Html.LabelFor(d => d.OperandRight)
+            </td>
+            <td class="col-sm-3 col-md-3 col-lg-3">
+                @Html.TextBoxFor(d => d.OperandRight)
+            </td>
+        </tr>
+        <tr class="col-sm-9 col-md-9 col-lg-9">
+            <td class="col-sm-3 col-md-3 col-lg-3">
+                @Html.LabelFor(d => d.Type)
+            </td>
+            <td class="col-sm-3 col-md-3 col-lg-3">
+                <select name="Calculatortype">
+                    @foreach (string s in Model.Types)
+                    {
+                        <option value="@s">@s</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr class="col-sm-9 col-md-9 col-lg-9">
+            <td>
+                @Html.TextBoxFor(d => d.Result, new { id = "result" })
+            </td>
+        </tr>
+        <tr class="col-sm-9 col-md-9 col-lg-9">
+            <td class="col-sm-3 col-md-3 col-lg-3">
+                <input id="addButton" type="button" value="Add" />
+            </td>
+            <td class="col-sm-3 col-md-6 col-lg-6">
+                <input id="multiplyButton" type="button" value="Mul" />
+            </td>
+        </tr>
+    </table>
+    @*  }*@
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#addButton").click(function () {
+            $.ajax({
+                url: "@Url.Action("add","Home")",
+                type: 'POST',
+                data: $('form').serialize(),
+                cache: true,
+                error: function (xhr) {
+                    alert('Error occurred!!');
+                },
+                success: function (result) {
+                    //$('#calculator').empty();
+                    $("#result").val(result);
+                },
+                async: true,
+                processData: true
+            }).done(function () { alert("Done!") });
+        });
+        $("#multiplyButton").click(function () {
+            $.ajax({
+                url: "@Url.Action("mul", "Home")",
+                type: 'POST',
+                data: $('form').serialize(),
+                cache: true,
+                error: function (xhr) {
+                    alert('Error occurred!!');
+                },
+                success: function (result) {
+                    //$('#calculator').empty();
+                    $('#result').val(result);
+                },
+                async: true,
+                processData: true
+            }).done(function () { alert("Done!") });
+        });
+    });
+</script>

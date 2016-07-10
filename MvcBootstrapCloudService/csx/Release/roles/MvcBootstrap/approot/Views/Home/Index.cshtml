@@ -1,0 +1,15 @@
+﻿@model MvcBootstrap.Models.DataModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+@*<div ng-view>
+    <h2>index</h2>
+</div>*@
+<div id="testPartial">
+        @using (Html.BeginForm("calculate", "Home", FormMethod.Get))
+        {
+            @Html.Partial("Calculate", Model.CalcDataModel)
+        }
+    </div>

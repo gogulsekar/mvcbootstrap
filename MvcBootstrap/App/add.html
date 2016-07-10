@@ -1,0 +1,21 @@
+﻿<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-3">Enter value for left operand</label>
+        <input class="col-sm-3" type="text" ng-model="vm.leftOperand" />
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3">Enter value for right operand</label>
+        <input class="col-sm-3" type="text" ng-model="vm.rightOperand" />
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3" for="selectoption">Please select the calculator type</label>
+        <select name="selecttype" ng-model="vm.type" id="selectoption">
+            <option ng-repeat="t in vm.types" value="{{t.Type}}">{{t.Type}}</option>
+        </select>
+    </div>
+    <label class="col-sm-3" ng-bind="vm.result"></label>
+    <a href="#display" target="_self"><input class="col-sm-3" type="submit" ng-click="vm.add()" value="Add" /></a> 
+</form>
+<div id="display" ng-show="display" class="col-lg-12 col-sm-12 col-md-12">
+    Selected type is {{vm.type}}
+</div>
